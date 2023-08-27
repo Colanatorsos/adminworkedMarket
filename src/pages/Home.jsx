@@ -1,7 +1,9 @@
 import React from 'react'
 import Card from '../components/Card'
+import { useSelector } from 'react-redux';
 
 const Home = () => {
+    const products = useSelector(state => state.items);
     return (
         <div>
             <div className="row">
@@ -16,36 +18,4 @@ const Home = () => {
 export default Home
 
 
-const products = [
-        {
-            name: 'Машина',
-            price: 1234,
-            img: 'https://cdn.nerdschalk.com/wp-content/uploads/2022/12/how-to-put-photos-side-by-side-on-iphone-759x427.png',
-            description: 'машина для вас'
-        },
-        {
-            name: 'Компьютер',
-            price: 1234,
-            img: 'https://cdn.nerdschalk.com/wp-content/uploads/2022/12/how-to-put-photos-side-by-side-on-iphone-759x427.png',
-            description: 'Компы'
-        },
-        {
-            name: 'Телефон',
-            price: 1234,
-            img: 'https://cdn.nerdschalk.com/wp-content/uploads/2022/12/how-to-put-photos-side-by-side-on-iphone-759x427.png',
-            description: 'Айфон'
-        },
-        {
-            name: 'Стиральная машина',
-            price: 1234,
-            img: 'https://cdn.nerdschalk.com/wp-content/uploads/2022/12/how-to-put-photos-side-by-side-on-iphone-759x427.png',
-            description: 'для стирки полуавтомат'
-        },
-        {
-            name: 'Швейная машина',
-            price: 1234,
-            img: 'https://cdn.nerdschalk.com/wp-content/uploads/2022/12/how-to-put-photos-side-by-side-on-iphone-759x427.png',
-            description: 'для шитья'
-        },
-    ]
  

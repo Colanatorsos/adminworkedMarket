@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addItem, deleteItem } from '../store/reducers/itemsSlice';
 /* 
 import { addToShop } from '../store/reducers/adminSlice';
 import { useDispatch } from 'react-redux';
  */
 
 const Admin = () => {
-    const dispatch = useDispatch()
     const initialItemState = {
         title: '',
         price: '',
@@ -24,17 +25,31 @@ const Admin = () => {
         }));
     };
 
+    const dispatch = useDispatch();
+
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    
+    //     dispatch(addItem(item));
+    //     setItem(initialItemState);
+    // };
+    
+    // const handleDeleteItem = (idx) => {
+    //     dispatch(deleteItem(idx));
+    // };
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
         setItemList(prevItemList => [...prevItemList, item]);
-
+        dispatch(addItem(item));
         setItem(initialItemState);
     };
 
     const handleDeleteItem = (idx) => {
         const updatedList = itemList.filter((item, i) => i !== idx);
         setItemList(updatedList);
+        dispatch(deleteItem(idx));
     };
 
     return (
@@ -42,6 +57,7 @@ const Admin = () => {
             <h2>Админ Панель</h2>
             <section className='Adding'>
                 <h3>Добавить товар</h3>
+            
                 <form onSubmit={handleSubmit}>
                     <input
                         type="text"
