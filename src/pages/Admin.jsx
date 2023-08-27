@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-/* 
-import { addToShop } from '../store/reducers/adminSlice';
-import { useDispatch } from 'react-redux';
- */
 
 const Admin = () => {
-    const dispatch = useDispatch()
     const initialItemState = {
         title: '',
         price: '',
@@ -78,7 +73,6 @@ const Admin = () => {
                     />
                     <br />
                     <button type="submit">Добавить</button>
-                    {/* onClick={() => dispatch(addToShop(item))} */}
                 </form>
             </section>
 

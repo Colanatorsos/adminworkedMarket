@@ -22,7 +22,7 @@
 header {
   padding: 20px 0;
 }
-.cart-item {
+/* .cart-item {
   position: relative;
   border: 1px solid #000;
   border-radius: 50%;
@@ -31,7 +31,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */
 .cart-counter {
   position: absolute;
   top: 3px;
