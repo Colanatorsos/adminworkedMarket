@@ -8,17 +8,16 @@ const Auth = ({ setIsAuthenticated }) => {
     const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate();
 
-    const handleAuth = () => {
-        if (username === 'Админ' && password === 'Пароль') {
-            setIsAuthenticated(true);
-            navigate('/admin');
-        } else {
-            setErrorMessage('Неправильный логин или пароль');
-        }
-        setUsername('');
-        setPassword('');
-    };
-
+  const handleAuth = () => {
+    if (username === "Админ" && password === "Пароль") {
+      setIsAuthenticated(true);
+      navigate("/admin");
+    } else {
+      setErrorMessage("Неправильный логин или пароль");
+    }
+    setUsername("");
+    setPassword("");
+  };
     return (
         <>
             <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
