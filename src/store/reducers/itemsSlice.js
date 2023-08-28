@@ -1,16 +1,16 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 export const itemsSlice = createSlice({
-  name: 'items',
+  name: "items",
   initialState: [],
   reducers: {
     addItem: (state, action) => {
       state.push(action.payload);
     },
     deleteItem: (state, action) => {
-      return state.filter(( el, idx) => idx !== action.payload);
-    }
-  }
+      return state.filter((_, idx) => idx !== action.payload);
+    },
+  },
 });
 
 export const { addItem, deleteItem } = itemsSlice.actions;
