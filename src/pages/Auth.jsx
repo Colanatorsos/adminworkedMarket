@@ -8,7 +8,6 @@ const Auth = ({ setIsAuthenticated }) => {
     const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate();
 
-
   const handleAuth = () => {
     if (username === "Админ" && password === "Пароль") {
       setIsAuthenticated(true);
@@ -19,7 +18,6 @@ const Auth = ({ setIsAuthenticated }) => {
     setUsername("");
     setPassword("");
   };
-
     return (
         <>
             <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
