@@ -2,10 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { addItem, deleteItem } from "../store/reducers/itemsSlice";
-/* 
-import { addToShop } from '../store/reducers/adminSlice';
-import { useDispatch } from 'react-redux';
- */
+
 
 const Admin = () => {
   const initialItemState = {
@@ -14,6 +11,7 @@ const Admin = () => {
     desc: "",
     url: "",
   };
+
 
   const [item, setItem] = useState(initialItemState);
   const itemList = useSelector((state) => state.items);
@@ -80,9 +78,9 @@ const Admin = () => {
           />
           <br />
           <button type="submit">Добавить</button>
-          {/* onClick={() => dispatch(addToShop(item))} */}
         </form>
       </section>
+
 
       <hr />
       <section className="Editing">
