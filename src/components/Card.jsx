@@ -18,6 +18,11 @@ const Card = ({ el }) => {
           borderWidth: "2px",
         }}
       >
+        {el.quantity && (
+          <p style={{ padding: "1px 25px", fontWeight: "500" }}>
+            Количество в корзине: {el.quantity}
+          </p>
+        )}
         <img
           style={{ width: "320px", height: "320px", objectFit: "contain" }}
           src={el.url}
@@ -49,10 +54,12 @@ const Card = ({ el }) => {
           >
             {el.price}
           </p>
+
           <button
-          style={{ margin: '1px 25px' ,padding: '8px 100px', justifyContent:'center', fontWeight: '400'}}
-          className="flex rounded bg-gray-200 hover:bg-indigo-500 hover:text-white px-10 py-2 font-medium transition duration-300 ease-in-out"
-           onClick={() => dispatch(addToCart(el))}>Добавить</button>
+            style={{ margin: '1px 25px', padding: '8px 100px', justifyContent: 'center', fontWeight: '400' }}
+            className="flex rounded bg-gray-200 hover:bg-indigo-500 hover:text-white px-10 py-2 font-medium transition duration-300 ease-in-out"
+            onClick={() => dispatch(addToCart(el))}>Добавить</button>
+
         </div>
       </div>
     </div>

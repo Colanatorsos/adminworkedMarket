@@ -37,7 +37,7 @@ const Admin = () => {
   return (
     <div>
       <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-      Добавить товар
+        Добавить товар
       </h2>
       <section className="Adding">
         <form
@@ -90,44 +90,44 @@ const Admin = () => {
           </button>
         </form>
       </section>
-      
+
       <section className="Editing">
         <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
           <h3
-          style={{padding: '10px 0px 45px'}}
-           className="mt-10 text-center py-8 px-6 text-2xl font-bold leading-9 tracking-tight text-gray-900">
+            style={{ padding: '10px 0px 45px' }}
+            className="mt-10 text-center py-8 px-6 text-2xl font-bold leading-9 tracking-tight text-gray-900">
             Список товаров
           </h3>
           <div className="row">
             {itemList.map((item, idx) => (
               <div className="col-3"
-              style={{paddingBottom: '34px'}}
-               key={idx}>
+                style={{ paddingBottom: '34px' }}
+                key={idx}>
                 <div
-                style={{ width: '320px',height: '473px', display: 'block' , margin:'0 auto' ,objectFit: 'contain', borderRadius: '10px'}}
-                className="min-h-30 min-w-40 border-2">
+                  style={{ width: '320px', height: '473px', display: 'block', margin: '0 auto', objectFit: 'contain', borderRadius: '10px' }}
+                  className="min-h-30 min-w-40 border-2">
                   <img
-                  style={{ width: '320px',height: '320px', objectFit: 'contain'}}
+                    style={{ width: '320px', height: '320px', objectFit: 'contain' }}
                     src={item.url}
                     alt="товар"
                   />
-                
+
                   <div className="min-h-70 min-w-50 bg-black ">
-                    <h2 style={{ padding: '0px 25px 1px', fontWeight: '600', fontSize: '1.25rem'}}
-                     className="text-base font-extrabold ">{item.title}</h2>
-                  
+                    <h2 style={{ padding: '0px 25px 1px', fontWeight: '600', fontSize: '1.25rem' }}
+                      className="text-base font-extrabold ">{item.title}</h2>
+
                     <p
-                    style={{ padding: '1px 25px', fontWeight: '400', color: 'rgb(144,144,144)'}}
+                      style={{ padding: '1px 25px', fontWeight: '400', color: 'rgb(144,144,144)' }}
                     >{item.desc}</p>
-                        <p 
-                     style={{ padding: '1px 25px 15px', fontWeight: '500'}}
-                    className="text-sm font-medium text-zinc-200">
+                    <p
+                      style={{ padding: '1px 25px 15px', fontWeight: '500' }}
+                      className="text-sm font-medium text-zinc-200">
                       {" "}
                       {item.price}
                     </p>
 
                     <button
-                       style={{ margin: '1px 25px',padding: '8px 105px', justifyContent:'center', fontWeight: '400'}}
+                      style={{ margin: '1px 25px', padding: '8px 105px', justifyContent: 'center', fontWeight: '400' }}
                       className="flex rounded bg-gray-200 hover:bg-indigo-500 hover:text-white px-10 py-2 font-medium transition duration-300 ease-in-out"
 
                       onClick={() => handleDeleteItem(idx)}

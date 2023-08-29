@@ -10,7 +10,7 @@ import '../pages/Auth.css'
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const prods = useSelector((s) => s.cart.products);
+  const totalQuantity = useSelector((s) => s.cart.totalQuantity); // Получаем общее количество из Redux
 
   const handleLogout = () => {
     setIsAuthenticated(false);
@@ -37,7 +37,7 @@ const App = () => {
                   <Link
                     to="/cart" id="side1"
                     className="text-base font-medium text-white hover:text-indigo-50 cart-item">
-                    Корзина <span className="cart-counter">{prods.length}</span>
+                    Корзина <span className="cart-counter">{totalQuantity}</span>
                   </Link>
                   <Link
                     to="/admin"

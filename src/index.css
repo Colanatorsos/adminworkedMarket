@@ -19,9 +19,6 @@
   width: 25%;
   padding: 0 15px;
 }
-header {
-  padding: 20px 0;
-}
 #side1 {
   position: relative;
 }
@@ -31,7 +28,6 @@ header {
   right: -10px;
   line-height: 11px;
   border-radius: 100%;
-  
 }
 .card img {
   width: 100%;
