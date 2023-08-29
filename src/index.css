@@ -22,23 +22,16 @@
 header {
   padding: 20px 0;
 }
-/* .cart-item {
+#side1 {
   position: relative;
-  border: 1px solid #000;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
+}
 .cart-counter {
+  padding: 4px;
   position: absolute;
-  top: 3px;
-  right: -4px;
-  background: white;
-  border-radius: 45px;
+  right: -10px;
   line-height: 11px;
+  border-radius: 100%;
+  
 }
 .card img {
   width: 100%;

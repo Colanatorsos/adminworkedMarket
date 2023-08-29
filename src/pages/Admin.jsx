@@ -64,6 +64,7 @@ const Admin = () => {
             type="text"
             name="desc"
             value={item.desc}
+            maxLength={15}
             onChange={handleInputChange}
             required
             placeholder="Описание"
@@ -84,18 +85,39 @@ const Admin = () => {
 
       <hr />
       <section className="Editing">
-        <h3>Список товаров</h3>
-        <ul>
-          {itemList.map((item, idx) => (
-            <li style={{ border: "solid black 1px" }} key={idx}>
-              <h4>{item.title}</h4>
-              {item.price}
-              <p>{item.desc}</p>
-              <img width={200} src={item.url} alt="товар" />
-              <button onClick={() => handleDeleteItem(idx)}>Удалить</button>
-            </li>
-          ))}
-        </ul>
+        <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+          <h3 className="text-2xl font-bold tracking-tight text-gray-900">
+            Список товаров
+          </h3>
+          <div className="row">
+            {itemList.map((item, idx) => (
+              <div className="col-3" key={idx}>
+                <div className="min-h-50 min-w-60 border-2 rounded">
+                  <img
+                    style={{ width: '300px', height: '400px', objectFit: 'contain' }}
+                    src={item.url}
+                    alt="товар"
+                  />
+                  <div className="min-h-80 min-w-60 bg-black">
+                    <h3 className="text-lg py-2 px-8 font-extrabold">{item.title}</h3>
+                    <p className="text-sm font-medium text-zinc-200">
+                      {" "}
+                      {item.price}
+                    </p>
+                    <p>{item.desc}</p>
+
+                    <button
+                      className="flex w-80 justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                      onClick={() => handleDeleteItem(idx)}
+                    >
+                      Удалить
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
       <hr />
     </div>
