@@ -70,6 +70,7 @@ const Admin = () => {
             type="text"
             name="desc"
             value={item.desc}
+            maxLength={15}
             onChange={handleInputChange}
             required
             placeholder="Описание"
@@ -128,6 +129,7 @@ const Admin = () => {
                     <button
                        style={{ margin: '1px 25px',padding: '8px 105px', justifyContent:'center', fontWeight: '400'}}
                       className="flex rounded bg-gray-200 hover:bg-indigo-500 hover:text-white px-10 py-2 font-medium transition duration-300 ease-in-out"
+
                       onClick={() => handleDeleteItem(idx)}
                     >
                       Удалить
