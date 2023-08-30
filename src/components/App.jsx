@@ -6,14 +6,18 @@ import Cart from "../pages/Cart";
 import Auth from "../pages/Auth";
 import Admin from "../pages/Admin";
 import '../pages/Auth.css'
+import { db } from "../firebase";
 
 
 const App = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const totalQuantity = useSelector((s) => s.cart.totalQuantity); // Получаем общее количество из Redux
+  const [isAuthenticated, setIsAuthenticated] = useState(
+    localStorage.getItem("isAuthenticated") === "true"
+  );
+  const totalQuantity = useSelector((s) => s.cart.totalQuantity);
 
   const handleLogout = () => {
     setIsAuthenticated(false);
+    localStorage.removeItem("isAuthenticated");
   };
 
   return (

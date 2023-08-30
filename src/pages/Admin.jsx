@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { addItem, deleteItem } from "../store/reducers/itemsSlice";
+import { db } from "../firebase";
 
 const Admin = () => {
   const initialItemState = {
@@ -23,15 +24,18 @@ const Admin = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
     dispatch(addItem(item));
+    await db.collection("items").add(item);
     setItem(initialItemState);
   };
 
-  const handleDeleteItem = (idx) => {
+  const handleDeleteItem = async (idx) => {
     dispatch(deleteItem(idx));
+    const itemToDelete = itemList[idx];
+    const itemId = itemToDelete.id;
+    await db.collection("items").doc(itemId).delete();
   };
 
   return (

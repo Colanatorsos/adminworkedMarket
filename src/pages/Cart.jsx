@@ -10,7 +10,6 @@ const Cart = React.memo(() => {
     const dispatch = useDispatch();
 
     const handleClearCart = () => {
-        console.log("Clearing the cart");
         dispatch(clearCart());
     };
 
